@@ -120,6 +120,5 @@ module-gene-overlap/
 If you use this tool in your research, please cite:
 
 ```
-Your Name et al. (20XX). Module Gene Overlap Analysis: A web-based tool for identifying
-gene module overlaps. Journal of Software Tools. DOI: XX.XXXX/XXXXX
+Li, Huihong, et al. "Shared Transcriptomic Signatures Reveal Synaptic Pruning as a Link Between Alzheimer’s Disease and Epilepsy." bioRxiv (2024): 2024-10.
 ```
