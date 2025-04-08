@@ -1,0 +1,4 @@
+<script>start("/Users/huihong/Documents/Github/NEURON_SNN/data/");</script>
+<script>onHasParentDirectory();</script>
+<script>addRow("data.xlsx","data.xlsx",0,957183,"935 kB",1744118807,"4/8/25, 9:26:47 AM");</script>
+<script>addRow("example.csv","example.csv",0,86445,"84.4 kB",1744120409,"4/8/25, 9:53:29 AM");</script>
