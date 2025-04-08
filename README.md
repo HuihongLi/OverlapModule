@@ -44,7 +44,7 @@ A web application for analyzing gene overlaps between different modules across d
 
 1. Start the application:
    ```
-   python app.py
+   python server.py
    ```
 
 2. Open a web browser and navigate to:
@@ -98,7 +98,7 @@ Both methods are adjusted for multiple testing using the Benjamini-Hochberg proc
 
 ```
 module-gene-overlap/
-├── app.py               # Main application code
+├── server.py               # Main application code
 ├── data/                # Directory for datasets
 │   ├── data.xlsx        # Built-in reference datasets
 │   └── example.csv      # Example dataset for users
