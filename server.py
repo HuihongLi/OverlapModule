@@ -510,4 +510,5 @@ def download_example():
         return "Error: Example file not available", 404
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    port = int(os.environ.get("PORT", 10000)) 
+    app.run_server(debug=False, host='0.0.0.0', port=port)
