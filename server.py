@@ -27,6 +27,9 @@ def benjamini_hochberg(p_values):
     
     return adjusted_p
 
+# Get port from environment variable (Render sets this)
+port = int(os.environ.get("PORT", 10000))
+
 # Initialize Dash app with Bootstrap
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
@@ -56,6 +59,7 @@ BUILTIN_DATASET_OPTIONS = [{'label': name, 'value': name} for name in BUILTIN_DA
 # Create example CSV if needed
 def create_example_csv():
     if BUILTIN_DATASETS and not os.path.exists('data/example.csv'):
+        os.makedirs('data', exist_ok=True)  # Ensure data directory exists
         first_dataset_name = next(iter(BUILTIN_DATASETS))
         BUILTIN_DATASETS[first_dataset_name].to_csv('data/example.csv', index=False)
         print("Created data/example.csv from built-in dataset")
@@ -496,22 +500,18 @@ def download_gene_list(n_clicks, selected_rows, significant_data):
         filename=f"overlapping_genes_YourData_{selected_overlap['UserModule']}_"
                  f"{selected_overlap['RefDataset']}_{selected_overlap['RefModule']}.txt"
     )
-# Get port from environment variable (Render sets this)
-port = int(os.environ.get("PORT", 10000))
-
-app = Dash(__name__)
-server = app.server
 
 # Server route for example file download
 @server.route('/download-example')
 def download_example():
     try:
-        return send_file('data/example.csv', 
+        example_path = 'data/example.csv'
+        return send_file(example_path, 
                         mimetype='text/csv',
                         as_attachment=True,
-                        download_name='data/example.csv')
+                        download_name='example.csv')  # Fixed the download name
     except Exception as e:
-        print(f"Error serving data/example.csv: {str(e)}")
+        print(f"Error serving {example_path}: {str(e)}")
         return "Error: Example file not available", 404
 
 if __name__ == '__main__':
