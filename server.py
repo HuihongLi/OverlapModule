@@ -496,6 +496,11 @@ def download_gene_list(n_clicks, selected_rows, significant_data):
         filename=f"overlapping_genes_YourData_{selected_overlap['UserModule']}_"
                  f"{selected_overlap['RefDataset']}_{selected_overlap['RefModule']}.txt"
     )
+# Get port from environment variable (Render sets this)
+port = int(os.environ.get("PORT", 10000))
+
+app = Dash(__name__)
+server = app.server
 
 # Server route for example file download
 @server.route('/download-example')
@@ -510,5 +515,4 @@ def download_example():
         return "Error: Example file not available", 404
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 10000)) 
-    app.run_server(debug=False, host='0.0.0.0', port=port)
+    app.run_server(host='0.0.0.0', port=port, debug=False)
