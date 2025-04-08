@@ -19,8 +19,8 @@ Website:https://overlapmodule.onrender.com
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/module-gene-overlap.git
-   cd module-gene-overlap
+   git clone https://github.com/HuihongLi/OverlapModule.git
+   cd OverlapModule
    ```
 
 2. Create a virtual environment (recommended):
@@ -100,7 +100,7 @@ Both methods are adjusted for multiple testing using the Benjamini-Hochberg proc
 ## Directory Structure
 
 ```
-module-gene-overlap/
+OverlapModule/
 ├── server.py               # Main application code
 ├── data/                # Directory for datasets
 │   ├── data.xlsx        # Built-in reference datasets
