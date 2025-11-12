@@ -123,5 +123,5 @@ OverlapModule/
 If you use this tool in your research, please cite:
 
 ```
-Li, Huihong, et al. "Shared Transcriptomic Signatures Reveal Synaptic Pruning as a Link Between Alzheimer’s Disease and Epilepsy." bioRxiv (2024): 2024-10.
+Li, H., Xie, Z., Tian, Y. et al. Genome-wide consensus transcriptional signatures identify synaptic pruning linking Alzheimer’s disease and epilepsy. Mol Psychiatry (2025). https://doi.org/10.1038/s41380-025-03318-0
 ```
