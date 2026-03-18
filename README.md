@@ -1,127 +1,40 @@
 # Module Gene Overlap Analysis
 
-A web application for analyzing gene overlaps between different modules across datasets. This tool enables researchers to identify statistically significant overlaps between gene modules from their own data and reference datasets.
+A web application for testing gene overlap between user-defined modules and reference modules across datasets. It helps researchers identify statistically significant overlaps and explore shared genes.
 
-Website:https://overlapmodule.onrender.com
-![Screenshot 2025-04-08 at 11 20 44](https://github.com/user-attachments/assets/379064a4-0676-46cf-a9cf-90c90fd729c5)
+**Live app:** https://overlapmodule.onrender.com
+
+![App screenshot](https://github.com/user-attachments/assets/379064a4-0676-46cf-a9cf-90c90fd729c5)
+
+## About
+
+This tool was developed as part of:
+
+**Li H, Xie Z, Tian Y, et al.**  
+*Genome-wide consensus transcriptional signatures identify synaptic pruning linking Alzheimer’s disease and epilepsy.*  
+**Molecular Psychiatry** (2026) 31:1774–1784  
+DOI: 10.1038/s41380-025-03318-0
+
+It enables researchers to validate and compare gene modules against the consensus modules described in the study.
 
 ## Features
 
-- Upload your own gene module data in CSV or Excel format
-- Compare against built-in reference datasets
-- Perform statistical testing using Fisher's Exact Test or Hypergeometric Test
-- Visualize overlaps with interactive heatmaps
-- Review significant overlaps with adjustable significance thresholds
-- Download lists of overlapping genes for further analysis
-- Apply Benjamini-Hochberg correction for multiple testing
+- Upload gene-module data (**CSV** or **Excel**)
+- Compare with built-in or custom reference datasets
+- Statistical testing:
+  - Fisher’s Exact Test
+  - Hypergeometric Test
+- Multiple testing correction (Benjamini–Hochberg)
+- Interactive heatmap visualization
+- Adjustable thresholds and filters
+- Download overlapping gene lists
 
 ## Installation
 
-1. Clone this repository:
-   ```
-   git clone https://github.com/HuihongLi/OverlapModule.git
-   cd OverlapModule
-   ```
-
-2. Create a virtual environment (recommended):
-   ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. Install required packages:
-   ```
-   pip install -r requirements.txt
-   ```
-
-4. Create the data directory:
-   ```
-   mkdir -p data
-   ```
-
-5. Add your reference datasets (optional):
-   - Place an Excel file at `data/data.xlsx` with reference datasets in separate sheets
-   - Each dataset should have at least the columns 'Gene' and 'Module'
-
-## Usage
-
-1. Start the application:
-   ```
-   python server.py
-   ```
-
-2. Open a web browser and navigate to:
-   ```
-   http://127.0.0.1:8050/
-   ```
-
-3. Upload your dataset:
-   - Your file must contain at least the columns 'Gene' and 'Module'
-   - Both Excel (.xlsx) and CSV (.csv) formats are supported
-   - Use the provided example file as a reference for formatting
-
-4. Configure analysis parameters:
-   - Select a reference dataset to compare against
-   - Adjust the total gene universe size (default: 20,000)
-   - Set the significance threshold (default: 0.05)
-   - Choose minimum overlap count (default: 5)
-   - Select the statistical test method
-
-5. Run the analysis and view results:
-   - Interactive heatmap shows overlap significance (-log10 of adjusted p-value)
-   - Table of significant overlaps with key statistics
-   - Click on any overlap to view and download detailed gene lists
-
-## Input File Format
-
-Your input file should contain at least the following columns:
-- `Gene`: Gene identifiers (symbols or IDs)
-- `Module`: Module/cluster identifiers for each gene
-
-Example:
-```
-Gene,Module
-BRCA1,module1
-TP53,module1
-MYC,module2
-PTEN,module2
-```
-
-## Statistical Methods
-
-The application offers two statistical approaches:
-
-1. **Fisher's Exact Test**: Tests the independence of row and column variables in a contingency table.
-
-2. **Hypergeometric Test**: Calculates the probability of finding k or more overlapping genes between two sets.
-
-Both methods are adjusted for multiple testing using the Benjamini-Hochberg procedure to control the false discovery rate.
-
-## Directory Structure
-
-```
-OverlapModule/
-├── server.py               # Main application code
-├── data/                # Directory for datasets
-│   ├── data.xlsx        # Built-in reference datasets
-│   └── example.csv      # Example dataset for users
-├── requirements.txt     # Python dependencies
-└── README.md            # This documentation file
-```
-
-## Requirements
-
-- Python 3.7+
-- See requirements.txt for Python package dependencies
-
-## License
-
-[MIT License](LICENSE)
-
-## Citation
-
-If you use this tool in your research, please cite:
-
-```
-Li, H., Xie, Z., Tian, Y. et al. Genome-wide consensus transcriptional signatures identify synaptic pruning linking Alzheimer’s disease and epilepsy. Mol Psychiatry (2025). https://doi.org/10.1038/s41380-025-03318-0
-```
+```bash
+git clone https://github.com/HuihongLi/OverlapModule.git
+cd OverlapModule
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+mkdir -p data
