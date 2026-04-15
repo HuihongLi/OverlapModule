@@ -4,8 +4,6 @@ A web application for testing gene overlap between user-defined modules and refe
 
 **Live app:** https://overlapmodule.onrender.com
 
-![App screenshot](https://github.com/user-attachments/assets/379064a4-0676-46cf-a9cf-90c90fd729c5)
-
 ## About
 
 This tool was developed as part of:
